@@ -153,7 +153,7 @@ function Home() {
 
       <button onClick={handleClear}>Clear</button>
       <div className="d-flex">
-        {cardsState.map(function (card) {
+        {cardsState.map((card) => {
           return (
             <Card
               key={card.id}

@@ -80,7 +80,7 @@ const Tomas = () => {
   };
   const handleUpdate = (character) => {
     const characterIndex = charactersState.findIndex(
-      (characters) => characterState === character.id
+      (characterState) => characterState.id === character.id
     );
     if (characterIndex !== -1) {
       const newCharactersState = [...charactersState];
