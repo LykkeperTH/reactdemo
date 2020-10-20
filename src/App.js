@@ -1,31 +1,28 @@
-import React, { Component } from 'react';
-import {Switch,Route} from 'react-router-dom';
-import logo from './logo.svg';
-import './App.css';
-import Header from './components/tomas/Header';
-import Detail from './components/Detial';
-import Lyout from './Lyout';
-import Home from './page/Home';
-import About from './page/About';
-import Tomas from './page/Tomas';
- 
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import "./App.css";
 
-function App(){
-  return (<Lyout>
-    <switch>
-      <Route exact path="/">
-        <Home/>
-      </Route>
-      <Route path="/about">
-        <About/>
-      </Route >
-      <Route path="/tomas">
-      <Tomas/>
-      </Route>
-    </switch>
+import Layout from "./Layout";
+import Home from "./page/Home";
+import About from "./page/About";
+import Tomas from "./page/Tomas";
 
-  </Lyout>)
+function App() {
+  return (
+    <Layout>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/tomas">
+          <Tomas />
+        </Route>
+      </Switch>
+    </Layout>
+  );
 }
-
 
 export default App;

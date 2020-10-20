@@ -1,76 +1,73 @@
-.App{
+.App {
   display: flex;
   justify-content: center;
 }
-.Header{
+.Header {
   padding: 10px;
   padding: 2rem;
   padding-top: 3rem;
   margin-bottom: 6rem;
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.Detail{
+.Detail {
   padding: 10px;
 }
-.post-header{
-  display:flex;
+.post-header {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.Header-left{
+.Header-left {
   width: 35%;
-
 }
-.header-right{
+.header-right {
   width: 65%;
 }
-.header-img{
+.header-img {
   max-width: 100%;
 }
-.header-title{
-  font-size: calc(36px + 34*((100vw - 560px)/1420));
+.header-title {
+  font-size: calc(36px + 34 * ((100vw - 560px) / 1420));
   font-weight: 500;
   line-height: 1.1;
 }
-.category{
-  font-size: calc(18px + 6*((100vw - 560px)/1420));
+.category {
+  font-size: calc(18px + 6 * ((100vw - 560px) / 1420));
   color: #faa61a;
   font-weight: 300;
   text-transform: uppercase;
 }
-.category a{
+.category a {
   text-decoration: none;
   color: #faa61a;
   margin-top: 2rem;
-
 }
 .category-lable {
-  font-size: calc(15px + 1*((100vw - 560px)/1420));
+  font-size: calc(15px + 1 * ((100vw - 560px) / 1420));
   margin-top: 2rem;
 }
-.category-lable span{
+.category-lable span {
   color: #faa61a;
-  
 }
-.category-lablename{
-  font-size: calc(16px + 2*((100vw - 560px)/1420));
+.category-lablename {
+  font-size: calc(16px + 2 * ((100vw - 560px) / 1420));
   text-transform: uppercase;
   line-height: 1;
   font-weight: 400;
-  margin-top: .33333rem;
+  margin-top: 0.33333rem;
   color: #000;
 }
-ul.horizontal{
+ul.horizontal {
   list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
-ul.horizontal li{
+ul.horizontal li {
   float: left;
 }
 ul.horizontal li a {
@@ -81,7 +78,7 @@ ul.horizontal li a {
   text-decoration: none;
 }
 ul.horizontal li a.active {
-  background-color: #4CAF50;
+  background-color: #4caf50;
 }
 .parent_book_listing {
   position: relative;
@@ -138,11 +135,18 @@ ul.horizontal li a.active {
   overflow: hidden;
   text-align: left;
 }
-.d-flex{
-  display:flex
+.d-flex {
+  display: flex;
 }
-.img_book_list{
+.img_book_list {
   width: 100%;
 }
-  
-
+.mt-3 {
+  margin-top: 3rem;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
