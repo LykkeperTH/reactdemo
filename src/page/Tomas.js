@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import CardTomas from "../components/tomas/Card";
 import Header from "../components/tomas/Header";
@@ -48,6 +48,19 @@ const Tomas = () => {
     age: "",
     imageUrl: "",
   });
+  useEffect(() => {
+    const charactersStorage = localStorage.getItem("characters");
+    if (charactersStorage) {
+      setCharactersState(JSON.parse(charactersStorage));
+    } else {
+      setCharactersToStorage(charactersState);
+    }
+  }, []);
+
+  useEffect(() => {
+    setCharactersToStorage(charactersState);
+  }, [charactersState]);
+
   const openModal = () => {
     setIsOpen(true);
   };
@@ -63,21 +76,6 @@ const Tomas = () => {
     });
     setCharactersState(newCharactersState);
   };
-  const handleChange = (event) => {
-    console.log(event.target, event.target.name, event.target.value);
-    setCharacterState({
-      ...characterState,
-      [event.target.name]: event.target.value,
-    });
-  };
-  const handleSubmit = () => {
-    setCharactersState([
-      ...charactersState,
-      { ...characterState, id: charactersState.length + 1 },
-    ]);
-    setCharacterState({});
-    closeModal();
-  };
   const handleUpdate = (character) => {
     const characterIndex = charactersState.findIndex(
       (characterState) => characterState.id === character.id
@@ -88,6 +86,26 @@ const Tomas = () => {
       setCharactersState(newCharactersState);
     }
   };
+  const handleChange = (event) => {
+    console.log(event.target, event.target.name, event.target.value);
+    setCharacterState({
+      ...characterState,
+      [event.target.name]: event.target.value,
+    });
+  };
+  const handleSubmit = () => {
+    setCharactersState([
+      ...charactersState,
+      { ...characterState, id: Math.random().toString() },
+    ]);
+    setCharacterState({});
+    closeModal();
+  };
+
+  const setCharactersToStorage = (characters) => {
+    localStorage.setItem("characters", JSON.stringify(characters));
+  };
+
   return (
     <div>
       <Header />
