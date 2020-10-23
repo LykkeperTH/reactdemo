@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../components/home/Card";
 import Modal from "react-modal";
 export const customStyles = {
@@ -60,6 +60,17 @@ function Home() {
     rating: "",
     imageUrl: "",
   });
+  useEffect(() => {
+    const cardsStorage = localStorage.getItem("cards");
+    if (cardsStorage) {
+      setCardsState(JSON.parse(cardsStorage));
+    } else {
+      setCardsToStorage(cardsState);
+    }
+  }, []);
+  useEffect(() => {
+    setCardsToStorage(cardsState);
+  }, [cardsState]);
   const openModal = () => {
     setIsOpen(true);
   };
@@ -76,13 +87,16 @@ function Home() {
     });
     setCardsState(newCardsState);
   };
-  const handleChange = (event) => {
+  const handleChange = (e) => {
     // console.log(event.target,event.target.name,event.target.value)
-    setCardState({ ...cardState, [event.target.name]: event.target.value });
+    setCardState({ ...cardState, [e.target.name]: e.target.value });
   };
   const handleSubmit = () => {
     closeModal();
-    setCardsState([...cardsState, { ...cardState, id: cardsState.length + 1 }]);
+    setCardsState([
+      ...cardsState,
+      { ...cardState, id: Math.random().toString() },
+    ]);
     setCardState([]);
   };
   const handleUpdate = (card) => {
@@ -94,6 +108,9 @@ function Home() {
       newCardsState[cardIndex] = card;
       setCardsState(newCardsState);
     }
+  };
+  const setCardsToStorage = (cards) => {
+    localStorage.setItem("cards", JSON.stringify(cards));
   };
   return (
     <div>

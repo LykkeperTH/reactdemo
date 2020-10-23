@@ -70,12 +70,7 @@ const Tomas = () => {
   const handleClear = () => {
     setCharactersState([]);
   };
-  const handleDeleteCharacter = (characterId) => {
-    const newCharactersState = charactersState.filter((character) => {
-      return character.id !== characterId;
-    });
-    setCharactersState(newCharactersState);
-  };
+
   const handleUpdate = (character) => {
     const characterIndex = charactersState.findIndex(
       (characterState) => characterState.id === character.id
@@ -86,11 +81,18 @@ const Tomas = () => {
       setCharactersState(newCharactersState);
     }
   };
-  const handleChange = (event) => {
-    console.log(event.target, event.target.name, event.target.value);
+  const handleDeleteCharacter = (characterId) => {
+    const newCharactersState = charactersState.filter((character) => {
+      return character.id !== characterId;
+    });
+    setCharactersState(newCharactersState);
+  };
+
+  const handleChange = (e) => {
+    console.log(e.target, e.target.name, e.target.value);
     setCharacterState({
       ...characterState,
-      [event.target.name]: event.target.value,
+      [e.target.name]: e.target.value,
     });
   };
   const handleSubmit = () => {
