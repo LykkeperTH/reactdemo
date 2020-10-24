@@ -150,3 +150,16 @@ ul.horizontal li a.active {
 .mr-auto {
   margin-right: auto;
 }
+.box-card {
+  border-radius: 20px;
+  border: 2px solid LightGray;
+  padding: 20px;
+  width: fit-content;
+  height: fit-content;
+  background-color: LightGray;
+}
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4caf50;
+}

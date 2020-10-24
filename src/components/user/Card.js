@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 const Card = ({ user }) => {
   return (
     <div>
-      <div>
+      <div className="ln">
         {user.name}
-        <Link to={`user/${user.id}`}>คลิ้ก</Link>
+        <Link to={`user/${user.id}`}>
+          <button className="button1">Click</button>
+        </Link>
       </div>
     </div>
   );
