@@ -5,6 +5,8 @@ import Layout from "./Layout";
 import Home from "./page/Home";
 import About from "./page/About";
 import Tomas from "./page/Tomas";
+import Users from "./page/Users";
+import User from "./page/User";
 
 function App() {
   return (
@@ -13,11 +15,17 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
+        <Route path="/tomas">
+          <Tomas />
+        </Route>
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/tomas">
-          <Tomas />
+        <Route path="/users">
+          <Users />
+        </Route>
+        <Route path="/user/:userId">
+          <User />
         </Route>
       </Switch>
     </Layout>

@@ -14,6 +14,7 @@ const customStyles = {
 const CardTomas = ({ character, handleDeleteCharacter, handleUpdate }) => {
   const [characterState, setCharacterState] = useState(character);
   const [modalIsOpen, setIsOpen] = useState(false);
+
   const handleDelete = () => handleDeleteCharacter(character.id);
   const openModal = () => {
     setIsOpen(true);
@@ -21,11 +22,11 @@ const CardTomas = ({ character, handleDeleteCharacter, handleUpdate }) => {
   const closeModal = () => {
     setIsOpen(false);
   };
-  const handleChange = (event) => {
+  const handleChange = (e) => {
     // console.log(event.target,event.target.name,event.target.value)
     setCharacterState({
       ...characterState,
-      [event.target.name]: event.target.value,
+      [e.target.name]: e.target.value,
     });
   };
   const handleSubmit = () => {

@@ -11,10 +11,13 @@ function Layout({ children }) {
           </NavLink>
         </li>
         <li>
+          <NavLink to="/tomas">Tomas</NavLink>
+        </li>
+        <li>
           <NavLink to="/about">About</NavLink>
         </li>
         <li>
-          <NavLink to="/tomas">Tomas</NavLink>
+          <NavLink to="/users">Users</NavLink>
         </li>
       </ul>
       {children}
