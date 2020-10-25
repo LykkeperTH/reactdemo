@@ -11,6 +11,7 @@ const Post = ({ post, user }) => {
       }/${now.getFullYear()}`}</small>
       <h5>{post.title}</h5>
       {post.body}
+      {post.id}
     </div>
   );
 };
