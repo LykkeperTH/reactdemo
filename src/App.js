@@ -7,6 +7,8 @@ import About from "./page/About";
 import Tomas from "./page/Tomas";
 import Users from "./page/Users";
 import User from "./page/User";
+import Albums from "./page/Albums";
+import Photos from "./page/Photos";
 
 function App() {
   return (
@@ -24,8 +26,14 @@ function App() {
         <Route path="/users">
           <Users />
         </Route>
-        <Route path="/user/:userId">
+        <Route exact path="/user/:userId">
           <User />
+        </Route>
+        <Route exact path="/user/:userId/albums">
+          <Albums />
+        </Route>
+        <Route path="/albums/:albumId/photos">
+          <Photos />
         </Route>
       </Switch>
     </Layout>

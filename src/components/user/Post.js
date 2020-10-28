@@ -1,16 +1,17 @@
 import React from "react";
 
 const Post = ({ post, user }) => {
-  const now = new Date();
   return (
-    <div className="round3">
-      <span>{user.name}</span>
-      <br />
-      <small>{`${now.getDate()}/${
-        now.getMonth() + 1
-      }/${now.getFullYear()}`}</small>
-      <h5>{post.title}</h5>
-      {post.body}
+    <div className="container-post mg-8p">
+      <img
+        src="https://pbs.twimg.com/profile_images/1289209780670586881/iR37XzeU.jpg"
+        alt="Avatar"
+      />
+      <p>
+        <span>{user.name}</span>
+        {post.title}
+      </p>
+      <p>{post.body}</p>
     </div>
   );
 };

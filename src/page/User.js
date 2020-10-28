@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
@@ -14,6 +15,7 @@ const User = () => {
   useEffect(() => {
     getUser();
   }, []);
+
   const getPostsByUserId = async () => {
     const res = await axios(
       `https://jsonplaceholder.typicode.com/users/${params.userId}/posts`
@@ -36,12 +38,14 @@ const User = () => {
   }
   return (
     <div>
-      <div className="d-flex mt-3">
+      <div className="d-flex content-center pd-8p">
         <Profile user={user} />
       </div>
-      {posts.map((post) => {
-        return <Post user={user} post={post} key={post.id} />;
-      })}
+      <div className="d-flex content-center pd-8p flex-wrap">
+        {posts.map((post) => {
+          return <Post user={user} post={post} key={post.id} />;
+        })}
+      </div>
     </div>
   );
 };

@@ -21,7 +21,7 @@ const Users = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div>
+    <div className="d-flex flex-wrap content-center">
       {users.map((user) => {
         return <Card key={user.id} user={user} />;
       })}
