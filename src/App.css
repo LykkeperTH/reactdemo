@@ -150,10 +150,42 @@ ul.horizontal li a.active {
 .mr-auto {
   margin-right: auto;
 }
-.button1 {
-  background-color: white;
-  color: black;
-  border: 2px solid #4caf50;
+.button {
+  border-radius: 4px;
+  background-color: #008cba;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 23px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 .round3 {
   border: 2px solid #4caf50;
@@ -239,7 +271,7 @@ ul.horizontal li a.active {
   width: 100%;
 }
 .pd-8p {
-  padding: 8px;
+  padding: 15px;
 }
 .container-post {
   border: 2px solid #ccc;
