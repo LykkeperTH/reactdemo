@@ -3,21 +3,27 @@ import { NavLink } from "react-router-dom";
 
 function Layout({ children }) {
   return (
-    <div>
-      <ul className="horizontal">
+    <div className="navbar">
+      <ul>
         <li>
-          <NavLink exact to="/">
+          <NavLink className="navbar-a" exact to="/">
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/tomas">Tomas</NavLink>
+          <NavLink className="navbar-a" to="/tomas">
+            Tomas
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/about">About</NavLink>
+          <NavLink className="navbar-a" to="/about">
+            About
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/users">Users</NavLink>
+          <NavLink className="navbar-a" to="/users">
+            Users
+          </NavLink>
         </li>
       </ul>
       {children}

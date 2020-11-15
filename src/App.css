@@ -1,3 +1,30 @@
+/* new nab */
+.navbar {
+  margin: 20px 0;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.navbar ul {
+  padding: 20px;
+  list-style: none;
+  border-radius: 8px;
+  background: #eee;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.4) inset;
+  overflow: hidden;
+}
+.navbar li {
+  margin: 0 5px;
+  float: left;
+}
+.navbar-a {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 12px;
+  color: #111;
+  background: #ccc;
+  font: bold 1em/1 Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
 .App {
   display: flex;
   justify-content: center;
@@ -60,7 +87,7 @@
   margin-top: 0.33333rem;
   color: #000;
 }
-ul.horizontal {
+/* ul.horizontal {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -79,7 +106,7 @@ ul.horizontal li a {
 }
 ul.horizontal li a.active {
   background-color: #4caf50;
-}
+} */
 .parent_book_listing {
   position: relative;
   width: max-content;
